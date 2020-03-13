@@ -69,7 +69,7 @@ def _isArrayLike(obj):
 
 
 class COCO:
-    def __init__(self, annotation_file=None, use_ext=False):
+    def __init__(self, annotation_file=None, use_ext=True):
         """
         Constructor of Microsoft COCO helper class for reading and visualizing annotations.
         :param annotation_file (str): location of annotation file
@@ -90,7 +90,7 @@ class COCO:
             self.dataset = dataset
             self.createIndex(use_ext)
 
-    def createIndex(self, use_ext=False):
+    def createIndex(self, use_ext=True):
         # create index
         print('creating index...')
         if use_ext:
@@ -318,7 +318,7 @@ class COCO:
             for ann in anns:
                 print(ann['caption'])
 
-    def loadRes(self, resFile, use_ext=False):
+    def loadRes(self, resFile, use_ext=True):
         """
         Load result file and return a result api object.
         :param   resFile (str)     : file name of result file
